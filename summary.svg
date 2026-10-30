@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 112" role="img" aria-labelledby="title">
+  <title id="title">Monthly spending bar chart</title>
+  <path d="M25 15v78h105" fill="none" stroke="#66786b" stroke-width="2"/>
+  <path d="M25 70h105M25 47h105M25 24h105" stroke="#ddd" stroke-width="1"/>
+  <rect x="39" y="58" width="15" height="35" fill="#9dbda3"/>
+  <rect x="61" y="43" width="15" height="50" fill="#d5b78c"/>
+  <rect x="83" y="32" width="15" height="61" fill="#9dbda3"/>
+  <rect x="105" y="50" width="15" height="43" fill="#d5b78c"/>
+  <g fill="#555" font-family="Arial,sans-serif" font-size="8" text-anchor="middle"><text x="46" y="105">W1</text><text x="68" y="105">W2</text><text x="90" y="105">W3</text><text x="112" y="105">W4</text></g>
+</svg>
