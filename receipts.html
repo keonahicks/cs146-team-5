@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Receipts | SpendWise</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-content">
+        <div>
+          <h1>SpendWise</h1>
+          <p>A subscription and spending tracker</p>
+        </div>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="subscriptions.html">Subscriptions</a>
+          <a href="receipts.html" aria-current="page">Receipts</a>
+          <a href="summary.html">Spending Summary</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content">
+      <section class="intro" aria-labelledby="receipts-heading">
+        <div>
+          <h2 id="receipts-heading">Your Receipts</h2>
+          <p>
+            Upload receipts and keep them in one place. Attach a receipt to one
+            of your subscriptions, or save it as a one-time purchase like
+            groceries or a textbook.
+          </p>
+        </div>
+        <img
+          src="images/receipt.svg"
+          alt="Receipt showing an example purchase"
+          width="150"
+          height="112"
+        />
+      </section>
+
+      <section class="form-section" aria-labelledby="upload-heading">
+        <h2 id="upload-heading">Upload a Receipt</h2>
+        <form
+          class="receipt-form"
+          action="receipts.html"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <div class="form-row">
+            <label for="receipt-file"
+              >Receipt file (PDF, JPG, or PNG, up to 5 MB)</label
+            >
+            <input
+              type="file"
+              id="receipt-file"
+              name="receipt-file"
+              accept=".pdf,.jpg,.jpeg,.png"
+              required
+            />
+          </div>
+
+          <fieldset class="form-row">
+            <legend>Save this receipt as</legend>
+            <div class="form-check">
+              <input
+                type="radio"
+                id="type-sub"
+                name="receipt-type"
+                value="subscription"
+                checked
+              />
+              <label for="type-sub">Part of a subscription</label>
+            </div>
+            <div class="form-check">
+              <input
+                type="radio"
+                id="type-once"
+                name="receipt-type"
+                value="one-time"
+              />
+              <label for="type-once">One-time purchase</label>
+            </div>
+          </fieldset>
+
+          <div class="form-row">
+            <label for="receipt-sub">Subscription (if attaching to one)</label>
+            <select id="receipt-sub" name="receipt-sub">
+              <option value="">None</option>
+              <option value="spotify">Spotify Premium</option>
+              <option value="adobe">Adobe Creative Cloud</option>
+              <option value="netflix">Netflix</option>
+              <option value="prime">Amazon Prime</option>
+              <option value="gym">Gym Membership</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="receipt-desc">Description</label>
+            <input
+              type="text"
+              id="receipt-desc"
+              name="receipt-desc"
+              placeholder="e.g. Groceries at Trader Joe's"
+              required
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="receipt-amount">Amount ($)</label>
+            <input
+              type="number"
+              id="receipt-amount"
+              name="receipt-amount"
+              min="0"
+              step="0.01"
+              placeholder="42.17"
+              required
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="receipt-date">Purchase date</label>
+            <input type="date" id="receipt-date" name="receipt-date" required />
+          </div>
+
+          <button type="submit" class="button">Save Receipt</button>
+        </form>
+      </section>
+
+      <section class="list-section" aria-labelledby="sub-receipts-heading">
+        <h2 id="sub-receipts-heading">Subscription Receipts</h2>
+        <ul class="receipt-list">
+          <li class="receipt-card">
+            <h3>Netflix</h3>
+            <p>
+              <time datetime="2026-10-18">Oct 18, 2026</time> &middot; $15.49
+            </p>
+            <p><a href="images/receipt.svg">View receipt</a></p>
+          </li>
+          <li class="receipt-card">
+            <h3>Spotify Premium</h3>
+            <p>
+              <time datetime="2026-10-02">Oct 2, 2026</time> &middot; $11.99
+            </p>
+            <p><a href="images/receipt.svg">View receipt</a></p>
+          </li>
+          <li class="receipt-card">
+            <h3>Gym Membership</h3>
+            <p>
+              <time datetime="2026-10-23">Oct 23, 2026</time> &middot; $12.00
+            </p>
+            <p><a href="images/receipt.svg">View receipt</a></p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="list-section" aria-labelledby="once-receipts-heading">
+        <h2 id="once-receipts-heading">One-Time Purchases</h2>
+        <ul class="receipt-list">
+          <li class="receipt-card">
+            <h3>Groceries at Trader Joe's</h3>
+            <p>
+              <time datetime="2026-10-26">Oct 26, 2026</time> &middot; $42.17
+            </p>
+            <p><a href="images/receipt.svg">View receipt</a></p>
+          </li>
+          <li class="receipt-card">
+            <h3>Used textbook</h3>
+            <p>
+              <time datetime="2026-10-14">Oct 14, 2026</time> &middot; $38.00
+            </p>
+            <p><a href="images/receipt.svg">View receipt</a></p>
+          </li>
+          <li class="receipt-card">
+            <h3>Phone charger</h3>
+            <p>
+              <time datetime="2026-10-09">Oct 9, 2026</time> &middot; $19.99
+            </p>
+            <p><a href="images/receipt.svg">View receipt</a></p>
+          </li>
+        </ul>
+        <p class="note">
+          See how these add up each month on the
+          <a href="summary.html">Spending Summary</a> page.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>CS146 Web Programming Project</p>
+    </footer>
+  </body>
+</html>

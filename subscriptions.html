@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Subscriptions | SpendWise</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-content">
+        <div>
+          <h1>SpendWise</h1>
+          <p>A subscription and spending tracker</p>
+        </div>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="subscriptions.html" aria-current="page">Subscriptions</a>
+          <a href="receipts.html">Receipts</a>
+          <a href="summary.html">Spending Summary</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content">
+      <section class="intro" aria-labelledby="subs-heading">
+        <div>
+          <h2 id="subs-heading">Your Subscriptions</h2>
+          <p>
+            Add each subscription you pay for, along with its cost, how often it
+            bills, and when it renews next. SpendWise keeps them all in one list
+            and reminds you before a charge goes through.
+          </p>
+        </div>
+        <img
+          src="images/calendar.svg"
+          alt="Calendar with a renewal date circled"
+          width="150"
+          height="112"
+        />
+      </section>
+
+      <aside class="reminder" aria-labelledby="reminder-heading">
+        <h2 id="reminder-heading">Renewing Soon</h2>
+        <ul>
+          <li>
+            <strong>Spotify Premium</strong> renews on
+            <time datetime="2026-11-02">November 2, 2026</time> for $11.99.
+          </li>
+          <li>
+            <strong>Adobe Creative Cloud</strong> free trial ends on
+            <time datetime="2026-11-03">November 3, 2026</time>. Expected
+            charge: $22.99.
+          </li>
+        </ul>
+      </aside>
+
+      <section class="form-section" aria-labelledby="add-heading">
+        <h2 id="add-heading">Add a Subscription</h2>
+        <form class="sub-form" action="subscriptions.html" method="post">
+          <div class="form-row">
+            <label for="sub-name">Subscription name</label>
+            <input
+              type="text"
+              id="sub-name"
+              name="sub-name"
+              placeholder="e.g. Netflix"
+              required
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="sub-cost">Cost ($)</label>
+            <input
+              type="number"
+              id="sub-cost"
+              name="sub-cost"
+              min="0"
+              step="0.01"
+              placeholder="15.49"
+              required
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="sub-frequency">Billing frequency</label>
+            <select id="sub-frequency" name="sub-frequency" required>
+              <option value="">Choose one</option>
+              <option value="weekly">Weekly</option>
+              <option value="biweekly">Every 2 weeks</option>
+              <option value="monthly">Monthly</option>
+              <option value="bimonthly">Every 2 months</option>
+              <option value="yearly">Yearly</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="sub-date">Next renewal date</label>
+            <input type="date" id="sub-date" name="sub-date" required />
+          </div>
+
+          <div class="form-row form-check">
+            <input type="checkbox" id="sub-trial" name="sub-trial" />
+            <label for="sub-trial">This is a free trial</label>
+          </div>
+
+          <div class="form-row">
+            <label for="sub-reminder">Remind me</label>
+            <select id="sub-reminder" name="sub-reminder">
+              <option value="0">On the renewal day</option>
+              <option value="1">1 day before</option>
+              <option value="3" selected>3 days before</option>
+              <option value="7">7 days before</option>
+            </select>
+          </div>
+
+          <button type="submit" class="button">Save Subscription</button>
+        </form>
+      </section>
+
+      <section class="list-section" aria-labelledby="list-heading">
+        <h2 id="list-heading">Saved Subscriptions</h2>
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption>
+              All subscriptions currently being tracked
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Cost</th>
+                <th scope="col">Billing</th>
+                <th scope="col">Next Renewal</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Spotify Premium</td>
+                <td>$11.99 / month</td>
+                <td>Monthly</td>
+                <td><time datetime="2026-11-02">Nov 2, 2026</time></td>
+                <td>Active</td>
+              </tr>
+              <tr>
+                <td>Adobe Creative Cloud</td>
+                <td>$22.99 / month</td>
+                <td>Monthly</td>
+                <td><time datetime="2026-11-03">Nov 3, 2026</time></td>
+                <td>Free trial</td>
+              </tr>
+              <tr>
+                <td>Netflix</td>
+                <td>$15.49 / month</td>
+                <td>Monthly</td>
+                <td><time datetime="2026-11-18">Nov 18, 2026</time></td>
+                <td>Active</td>
+              </tr>
+              <tr>
+                <td>Amazon Prime</td>
+                <td>$139.00 / year</td>
+                <td>Yearly</td>
+                <td><time datetime="2027-03-12">Mar 12, 2027</time></td>
+                <td>Active</td>
+              </tr>
+              <tr>
+                <td>Gym Membership</td>
+                <td>$12.00 / 2 weeks</td>
+                <td>Every 2 weeks</td>
+                <td><time datetime="2026-11-06">Nov 6, 2026</time></td>
+                <td>Active</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">
+          Want to see what these cost together? Check the
+          <a href="summary.html">Spending Summary</a>, or attach a receipt on
+          the <a href="receipts.html">Receipts</a> page.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>CS146 Web Programming Project</p>
+    </footer>
+  </body>
+</html>
