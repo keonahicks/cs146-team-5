@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spending Summary | SpendWise</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="summary.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-content">
+      <div>
+        <h1>SpendWise</h1>
+        <p>A subscription and spending tracker</p>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="subscriptions.html">Subscriptions</a>
+        <a href="receipts.html">Receipts</a>
+        <a href="summary.html" aria-current="page">Spending Summary</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="intro" aria-labelledby="intro-heading">
+      <div>
+        <h2 id="intro-heading">Monthly spending summary</h2>
+        <p>Review subscription charges and one-time purchases together to see where your money goes each month.</p>
+      </div>
+      <img src="images/summary.svg" alt="Simple bar chart for monthly spending" width="150" height="112">
+    </section>
+
+    <section class="summary-section" aria-labelledby="month-heading">
+      <h2 id="month-heading">Choose a month</h2>
+      <p class="sample-note">This class demo uses sample spending. Try September, October, or November 2026 to compare purchases.</p>
+      <form class="summary-filters" id="summary-filters">
+        <div class="form-field">
+          <label for="month">Month</label>
+          <select id="month" name="month">
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10" selected>October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="year">Year</label>
+          <select id="year" name="year">
+            <option value="2026" selected>2026</option>
+            <option value="2027">2027</option>
+          </select>
+        </div>
+        <button type="submit">View summary</button>
+      </form>
+      <noscript><p>Enable JavaScript to change the month. The sample below shows October 2026.</p></noscript>
+    </section>
+
+    <section class="pages" aria-labelledby="totals-heading">
+      <h2 id="totals-heading">October 2026 spending</h2>
+      <div class="page-list" aria-live="polite" aria-atomic="true">
+        <article class="page-card">
+          <h3>Subscriptions</h3>
+          <p class="summary-amount" id="subscription-total">$16.97</p>
+          <p>Scheduled charges for this month</p>
+        </article>
+        <article class="page-card">
+          <h3>One-time purchases</h3>
+          <p class="summary-amount" id="purchase-total">$106.25</p>
+          <p>Purchases recorded this month</p>
+        </article>
+        <article class="page-card total-card">
+          <h3>Total spending</h3>
+          <p class="summary-amount" id="spending-total">$123.22</p>
+          <p>Subscriptions and purchases combined</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="summary-section" aria-labelledby="details-heading">
+      <h2 id="details-heading">Spending details</h2>
+      <div class="table-container" role="region" aria-labelledby="details-heading" tabindex="0">
+        <table class="spending-table">
+          <caption id="table-caption">Sample charges for October 2026</caption>
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Description</th>
+              <th scope="col">Type</th>
+              <th scope="col">Amount</th>
+            </tr>
+          </thead>
+          <tbody id="spending-rows">
+            <tr>
+              <td>Oct 3</td>
+              <td>Textbook</td>
+              <td>One-time purchase</td>
+              <td>$48.50</td>
+            </tr>
+            <tr>
+              <td>Oct 5</td>
+              <td>Music plan</td>
+              <td>Monthly subscription</td>
+              <td>$5.99</td>
+            </tr>
+            <tr>
+              <td>Oct 12</td>
+              <td>Video streaming</td>
+              <td>Monthly subscription</td>
+              <td>$7.99</td>
+            </tr>
+            <tr>
+              <td>Oct 14</td>
+              <td>Groceries</td>
+              <td>One-time purchase</td>
+              <td>$32.75</td>
+            </tr>
+            <tr>
+              <td>Oct 20</td>
+              <td>Cloud storage</td>
+              <td>Monthly subscription</td>
+              <td>$2.99</td>
+            </tr>
+            <tr>
+              <td>Oct 21</td>
+              <td>Bus pass</td>
+              <td>One-time purchase</td>
+              <td>$25.00</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row" colspan="3">Total</th>
+              <td id="table-total">$123.22</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <p id="purchase-note" class="sample-note">One-time purchases are included by purchase date.</p>
+    </section>
+
+    <section class="summary-section" aria-labelledby="summary-notes-heading">
+      <h2 id="summary-notes-heading">What is included?</h2>
+      <ul class="summary-notes">
+        <li>Monthly subscriptions count each month. The sample yearly software subscription counts only in November, when its payment is due.</li>
+        <li>One-time purchases count in the month they were made.</li>
+        <li>A receipt attached to a subscription does not count as a separate purchase.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>CS146 Web Programming Project</p>
+  </footer>
+</body>
+</html>
