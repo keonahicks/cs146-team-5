@@ -531,3 +531,16 @@ fieldset.form-row {
 .note {
   margin: 14px 0 0;
 }
+
+@media (max-width: 600px) {
+  .sub-form,
+  .receipt-form,
+  .receipt-list {
+    grid-template-columns: 1fr;
+  }
+
+  .form-section,
+  .list-section {
+    padding: 17px;
+  }
+}
